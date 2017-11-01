@@ -5,6 +5,8 @@
 	"scripts": {
 		"start": "node node_modules/react-native/local-cli/cli.js start",
 		"test": "jest",
+		"ios": "react-native run-ios",
+    "android": "react-native run-android",
 		"build:clean": "rm -Rf ios/Pods ios/Podfile.lock android/.idea android/.gradle ios/build android/build android/app/build",
 		"dev:refresh": "rm -Rf node_modules/ && yarn cache clean && yarn && yarn build:clean",
 		"dev:cache:reset": "rm -Rf $TMPDIR/react-* && watchman watch-del-all && yarn dev:refresh && yarn start -- --reset-cache"
@@ -19,10 +21,8 @@
 		"babel-eslint": "^8.0.1",
 		"babel-jest": "21.2.0",
 		"babel-plugin-module-resolver": "^2.7.0",
-		"babel-plugin-transform-decorators-legacy": "^1.3.4",
 		"babel-plugin-transform-inline-environment-variables": "^6.8.0",
 		"babel-preset-react-native": "4.0.0",
-		"babel-preset-stage-0": "^6.5.0",
 		"eslint": "^4.10.0",
 		"eslint-plugin-react": "^7.4.0",
 		"eslint-plugin-react-native": "^3.1.0",
