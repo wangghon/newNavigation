@@ -7,6 +7,7 @@
 		"test": "jest",
 		"ios": "react-native run-ios",
 		"android": "react-native run-android",
+		"rdev": "remotedev --hostname=0.0.0.0 --port=5665",
 		"build:clean": "rm -Rf ios/Pods ios/Podfile.lock android/.idea android/.gradle ios/build android/build android/app/build && pod install --project-directory=./ios/",
 		"dev:refresh": "rm -Rf node_modules/ && yarn cache clean && yarn && yarn build:clean",
 		"dev:cache:reset": "rm -Rf $TMPDIR/react-* && watchman watch-del-all && yarn dev:refresh && yarn start -- --reset-cache"
@@ -34,7 +35,8 @@
 		"flow-bin": "0.49.1",
 		"jest": "21.2.1",
 		"react-test-renderer": "16.0.0",
-		"remote-redux-devtools": "0.5.12"
+		"remote-redux-devtools": "0.5.12",
+		"remotedev-server": "^0.3.0-beta-3"
 	},
 	"jest": {
 		"preset": "react-native"

@@ -1,8 +1,12 @@
-import { Reducer } from 'react-native-router-flux';
+import { ActionConst } from 'react-native-router-flux';
 
-// needs to fake params to bypass sanity checks
-const routerReducer = Reducer({initialState: {key: true}, scenes: true});
+const routes = (state = {}, {type, scene}) => {
+  switch (type) {
+    case ActionConst.FOCUS:
+      return { ...state, scene };
+    default:
+      return state;
+  }
+};
 
-export default function(state, action) {
-  return routerReducer(state, action);
-}
+export default routes;

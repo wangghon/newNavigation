@@ -9,7 +9,7 @@ const devTools = devToolsModule.default || devToolsModule;
 const devToolsConfig = {
   name: 'newNavigation',
   hostname: 'localhost',
-  port: 5678,
+  port: 5665,
   realtime: true,
   autoReconnect: true,
   maxAge: 100,

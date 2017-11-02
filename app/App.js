@@ -1,15 +1,18 @@
 
 import React, { Component } from 'react';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
+import { Router } from 'react-native-router-flux';
 
 import store from 'store';
-import NavRouter from './navRouter';
+import scenes from './scenes';
+
+const ConnectedRouter = connect()(Router);
 
 export default class App extends Component<{}> {
   render() {
     return (
       <Provider store={store}>
-        <NavRouter />
+        <ConnectedRouter scenes={scenes} />
       </Provider>
     );
   }
