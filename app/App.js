@@ -4,7 +4,7 @@ import { Provider, connect } from 'react-redux';
 import { Router } from 'react-native-router-flux';
 
 import store from 'store';
-import scenes from './scenes';
+import scenes from 'scenes';
 
 const ConnectedRouter = connect()(Router);
 

@@ -6,10 +6,12 @@ import TabIcon from 'components/TabIcon';
 import ChatScreen from 'screens/ChatScreen';
 import ListScreen from 'screens/ListScreen';
 import ItemScreen from 'screens/ItemScreen';
+import LoginScreen from 'screens/LoginScreen';
 
 const KEY_CHAT_SCREEN = 'chat';
 const KEY_LIST_SCREEN = 'list';
 const KEY_ITEM_SCREEN = 'item';
+const KEY_LOGIN_SCREEN = 'login';
 
 const styles = StyleSheet.create({
   container: {
@@ -26,6 +28,9 @@ const styles = StyleSheet.create({
 
 const scenes = Actions.create(
   <Stack hideNavBar key="root" titleStyle={{ alignSelf: 'center' }}>
+    <Stack key="login" titleStyle={{ alignSelf: 'center' }}>
+      <Scene key="login" component={LoginScreen} title="Login" onExit={onExit} leftTitle="Cancel" onLeft={Actions.pop}/>
+    </Stack>
     <Scene hideNavBar>
       <Tabs key="tabbar" swipeEnabled showLabel={false} tabBarStyle={styles.tabBarStyle} activeBackgroundColor="white" inactiveBackgroundColor="rgba(255, 0, 0, 0.5)">
         <Stack key="tab_1" title="Tab #1" tabBarLabel="TAB #1" inactiveBackgroundColor="#FFF" activeBackgroundColor="#DDD" icon={TabIcon} navigationBarStyle={{ backgroundColor: 'green' }} titleStyle={{ color: 'white', alignSelf: 'center' }}>
@@ -37,5 +42,7 @@ const scenes = Actions.create(
     </Scene>
   </Stack>
 );
+
+const onExit = () => console.log('onExit');
 
 export default scenes;
