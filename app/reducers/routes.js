@@ -1,9 +1,21 @@
-import { ActionConst } from 'react-native-router-flux';
+import { ActionConst, Reducer } from 'react-native-router-flux';
 
-const routes = (state = {}, {type, scene}) => {
-  switch (type) {
+
+let initialRouting;
+
+const routerReducer = Reducer({initialState: {key: true}, scenes: true});
+
+const routes = (state = {}, action) => {
+  if (!state && initialRouting) {
+    return {...initialRouting};
+  }
+  switch (action.type) {
+    case 'RootContainerInitialAction': {
+      initialRouting = {...action.initialState};
+      return action.initialState;
+    }
     case ActionConst.FOCUS:
-      return { ...state, scene };
+      return routerReducer(state, action);
     default:
       return state;
   }
