@@ -28,8 +28,8 @@ const styles = StyleSheet.create({
 
 const scenes = Actions.create(
   <Stack hideNavBar key="root" titleStyle={{ alignSelf: 'center' }}>
-    <Stack key="login" titleStyle={{ alignSelf: 'center' }}>
-      <Scene key="login" component={LoginScreen} title="Login" onExit={onExit} leftTitle="Cancel" onLeft={Actions.pop}/>
+    <Stack key="startup" titleStyle={{ alignSelf: 'center' }}>
+      <Scene key={KEY_LOGIN_SCREEN} component={LoginScreen} title="Login" onExit={onExit}/>
     </Stack>
     <Scene hideNavBar>
       <Tabs key="tabbar" swipeEnabled showLabel={false} tabBarStyle={styles.tabBarStyle} activeBackgroundColor="white" inactiveBackgroundColor="rgba(255, 0, 0, 0.5)">
